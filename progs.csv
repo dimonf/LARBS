@@ -68,3 +68,20 @@ A,mutt-wizard-git,"is a light-weight terminal-based email system."
 ,slock,"allows you to lock your computer, and quickly unlock with your password."
 ,socat,"is a utility which establishes two byte streams and transfers data between them."
 ,moreutils,"is a collection of useful unix tools."
+# my addition
+,awesome-terminal-fonts,
+,ttf-roboto,
+,borg,"backup"
+,syncthing,
+,imagemagick,
+,tmux,
+,feh,"image viewer"
+,gimp,
+,inkscape,
+,jq,"cli json processor"
+,curl,
+,qpdf,
+,pdfgrep,
+,openssh,
+,nodejs,
+,ctags,
