@@ -10,10 +10,8 @@ home_dir="/home/$USER"
 repodir="$home_dir/.local/src"
 aurhelper="yay"
 
-echo ">" $repodir
-
 installpkg() {
-	pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
+	sudo pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
 }
 
 maininstall() {
