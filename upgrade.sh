@@ -69,6 +69,7 @@ update_loop() {
          destination="${destination/#\~/$HOME}"
          #skip if already installed
          echo "$installed" | grep -q "^$program" && echo "[$tag]$program: already installed, ignoring" && continue
+         echo "doing [$tag]$program ..."
          case $tag in
            "A") aurinstall "$program" ;;
            "G") gitmakeinstall "$program" "$repodir" compile ;;
@@ -82,3 +83,15 @@ update_loop() {
 
 #installationloop
 update_loop $1
+
+# enable screen power off
+SCR_FILE=/etc/X11/xorg.conf.d/10-screen-off.conf
+[ ! -f $SCR_FILE ] && sudo touch $SCR_FILE && sudo tee $SCR_FILE << 'EOF'
+Section "Monitor"
+         Option "DPMS" "true"
+EndSection
+
+Section "ServerFlags"
+         Option "StandbyTime" "15"
+EndSection
+EOF
